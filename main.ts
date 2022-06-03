@@ -35,7 +35,7 @@ export default class CustomJS extends Plugin {
   }
 
   async reloadIfNeeded(f: TAbstractFile) {
-    if (f.path.endsWith('.js')) {
+    if (f.path.endsWith('.js') || f.path.endswith('.ts')) {
       await this.loadClasses();
 
       // reload dataviewjs blocks if installed & version >= 0.4.11
